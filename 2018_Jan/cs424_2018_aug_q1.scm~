@@ -1,0 +1,10 @@
+#lang racket
+
+(define (map-skip func li)
+  (if (null? li)
+      null
+      (if (null? (cdr li))
+          (list (func (car li)))
+          (append (cons (func(car li)) (list(car (cdr li)))) (map-skip func (cddr li))))))
+
+(map-skip (λ (x) (+ x 1000)) '(1 2 3 4 5 6 7))
