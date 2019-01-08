@@ -7,3 +7,5 @@ tr([X|XS], [Y|YS]) :- tr(X, Y, XS, YS).
 tr([X|XR], [Y|YR], XS, [YT|YS]) :- write(X), write(Y), tr(XR, YT, XS, YS).
 tr([X|_], [Y|YR], XS, YS):- ((X == Y) -> write(X)).
 tr([], [], [], []).
+
+%% doesn't work at the moment
