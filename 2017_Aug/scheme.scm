@@ -9,3 +9,8 @@
               (extract list1 count)
               (extract list2 (+ count 1)))
           (fooHelper (drop list1 count) (drop list2 (+ count 1)) (+ count 2)))))
+
+(define (extract list count)
+  (if (> count (length list))
+      list
+      (take list count)))
