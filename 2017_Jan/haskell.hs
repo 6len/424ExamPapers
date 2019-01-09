@@ -1,8 +1,8 @@
-weaveHunks :: (Ord a) => Int->[a]->[a]->[a]
-weaveHunks hunk l1 l2 
-	| l1 == [] && l2 == [] = []
-	| otherwise = (take hunk l1) ++ weaveHunks hunk l2 (drop hunk l1)
+weaveHunks:: Int -> [a] -> [a] -> [a]
+weaveHunks hunkSize list1 list2 | hunkSize > (length list1) || hunkSize > (length list1) =
+  list1++list2
 
-main = do 
-	print(weaveHunks 2 [1..10] [11..20])
-	print(weaveHunks 3 "abcdefghijklmno" "ABCDEFGHIJKLMNO")
+weaveHunks hunkSize list1 list2 =
+  (take hunkSize list1) ++
+  (take hunkSize list2) ++
+  weaveHunks hunkSize (drop hunkSize list1) (drop hunkSize list2)
