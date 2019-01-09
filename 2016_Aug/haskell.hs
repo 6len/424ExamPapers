@@ -1,7 +1,7 @@
-tr :: (Ord a) => [[a]]->[[a]]
-tr (l1)
-	| last l1 == [] = []
-	| otherwise = [map head l1] ++ tr(map tail l1)
+tr:: [[a]] -> [[a]]
+tr lists | length (head lists) == 1 =
+  [head x | x <- lists]:[]
 
-main = do
-	print(tr [[1,2,3],[4,5,6]])
+tr lists =
+  [head x | x <- lists]:
+  tr [tail x | x <- lists]
