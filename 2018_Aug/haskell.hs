@@ -1,9 +1,7 @@
-import Data.List
+mapSkip :: (a->a) -> [a] -> [a]
+mapSkip function [] = []
 
-mapSkip :: (Ord a) => (a -> a) -> [a] -> [a]
-mapSkip func li | li == [] = []
-mapSkip func li | length li == 1 = [func (head li)]
-mapSkip func (l1:l2:ls) = [func l1] ++ l2 : mapSkip func ls
+mapSkip function [x] = [function(x)]
 
-main = do 
-	print(mapSkip (+1000) [1..7])
+mapSkip function (x:y:xs) =
+  (function x): y: (mapSkip function xs)
