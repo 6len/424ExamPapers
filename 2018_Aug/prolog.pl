@@ -1,4 +1,7 @@
-scissors([A|AX], B, [C|CX], D) :- ((A == C) ->   scissors(AX, B, CX, D)).
-scissors([A|AX], B, [], D) :- ((A == B) -> scissors(AX, _, [], D)).
-scissors([A|AX], _, [], [D|DX]) :- ((A == D) -> scissors(AX , _, [], DX)).
-scissors([], _, [], []).
+scissors([H|T], SplitElem, [], SecondBit) :-
+  H = SplitElem,
+  T = SecondBit, !.
+
+scissors([H|T], SplitElem, [H1|T1], SecondBit) :-
+  H = H1,
+  scissors(T, SplitElem, T1, SecondBit).
