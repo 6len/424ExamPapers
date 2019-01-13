@@ -1,0 +1,6 @@
+(define (after-filter pred list)
+(if (pred (car list))
+	"working" )
+	"not working")
+
+(after-filter number? '(1 2 3))
