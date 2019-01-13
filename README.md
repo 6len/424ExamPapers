@@ -250,7 +250,7 @@ Examples:
  ```Scheme
  '(a aa bb b c d cc dd ee ff e f g gg)
  ```
- --- 
+ --- |
  ### 2018 Jan
 Define a Scheme function tear which takes two arguments, a
  predicate p? and a list xs, and returns a list of two lists, the
@@ -280,7 +280,7 @@ Define a Scheme function tear which takes two arguments, a
  '((1 2 3) (a b c d e f))
  '((10 12 13) (1 2 3))
  ```
- --- 
+ --- |
  ### 2018 Aug
  Define a Scheme function map-skip which takes a function and a
  list and returns the result of applying the given function to
@@ -347,3 +347,33 @@ Define a Scheme function tear which takes two arguments, a
  (map li (+100)) ; performs function for each element in this case +100 for each element, !GOOD EXAMPLE FOR TRANSPOSE
  (map car ls) ; would create new list with first element of each list in ls << for 2d lists
  ```
+ 
+## Haskell Cheat Sheet
+### List functions that may be important
+```Haskell
+length li -- |returns the length of a list
+reverse li -- |reverses a list
+li !! n -- |gets Nth element from the list
+filter predicate xs -- |gets all elements that match some cond/predicate
+filter (not . predicate) cs -- |gets all the elements that do not match some cond/predicate
+minimum li -- |gets min element
+maximum li -- |gets max element
+new_element : xs -- |adds new element at the start of the list
+xs ++ [new_element] -- |adds new element at the end of the list
+list1 ++ list2 -- |joins two lists together
+null list -- |checks if the list is null
+map (function) list -- |maps a function to each value in the list i.e map (+7) li -> add 7 to each list member
+sum list -- |sum of values in list
+product list -- |product of values in list
+my_elem `elem` list -- |find if the element my_elem is in the list
+head list -- | gets first elements of the list
+tail list -- | removes the first element
+take n xs -- | gets the first n values of the list
+drop n xs -- | drops/deletes the first n values of the list
+last xs -- | gets the last value of the list
+
+-- |Some things about ordanance :
+-- |function is (a->a)
+-- |boolean predicate is (a->Bool)
+```
+ 
