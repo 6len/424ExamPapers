@@ -346,8 +346,10 @@ Define a Scheme function tear which takes two arguments, a
  (remove-duplicates li) ;removes duplicates from list
  (map li (+100)) ; performs function for each element in this case +100 for each element, !GOOD EXAMPLE FOR TRANSPOSE
  (map car ls) ; would create new list with first element of each list in ls << for 2d lists
- ```
  
+ ;for lis traversal in scheme we use cdr, car etc..
+ ```
+ ---
 ## Haskell Cheat Sheet
 ### List functions that may be important
 ```Haskell
@@ -375,5 +377,20 @@ last xs -- | gets the last value of the list
 -- |Some things about ordanance :
 -- |function is (a->a)
 -- |boolean predicate is (a->Bool)
+
+--|Lists look like (x:xs)
+
 ```
+ ---
+ ## Prolog Cheat Sheet
+ ### List functions that may be important
+ ```Prolog
+ member(elem, list) %True if the element elem is in the list
+ append(l1, l2, l3) %True if l1 appended to l2 = l3
+ delete(l1, elem, l2) % True if l1 = l2 less elem
+ same_length(l1, l2) % True if l1 and l2 are the same length
+ maplist(goal, list) % checks if goal can be applied on each element
  
+ % For prolog changing a variable is N1 is N+1 or similar
+ % Lists look like [X|XS] as params
+ ```
