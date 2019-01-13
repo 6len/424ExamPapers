@@ -1,6 +1,6 @@
-#424 Exam Paper Solutions + Cheat Sheet
+# 424 Exam Paper Solutions + Cheat Sheet
 
-##Scheme Solutions
+## Scheme Solutions
 ### 2014 Jan
 
 Define a higher-order function deep-fetch which takes a
@@ -36,7 +36,7 @@ Examples:
 '(the quick fox slick)
 ```
 ---
-###2014 August
+### 2014 August
 Define a function add-numbers which takes an s-expression
 and returns the sum of all the numbers contained therein.
 
@@ -60,16 +60,16 @@ and returns the sum of all the numbers contained therein.
  (add-numbers '(0 (1 2 3)))
  ```
  
- ####Output
+ #### Output
  
  ```Scheme
  6
  ```
  ---
- ###2015 Jan
+ ### 2015 Jan
  Define a function after-filter which takes in a predicate p and a list xs and returns a list of those elements of xs which immediately follow an element that passes predicate p
  
- ####Code
+ #### Code
  
  ```Scheme
  (define (after-filter pred list)
@@ -82,13 +82,13 @@ and returns the sum of all the numbers contained therein.
  (after-filter number? '(a 2 3 b 4 c))
  ```
  
- ####Output
+ #### Output
  
  ```Scheme
  '(3 b c)
  ``` 
  ---
- ###2015 Aug & 2016 Jan
+ ### 2015 Aug & 2016 Jan
 Define a Scheme function reverse-with-count which takes two
 lists, the second of which is a list of non-negative integers the
 same length as the first list, and returns a list of elements from
@@ -99,7 +99,7 @@ as specified by the corresponding element of the second list.
 
 (reverse-with-count '(d c b a) '(3 0 0 1)) => (a d d d)
  
- ####Code
+ #### Code
  
  ```Scheme
 revCount :: String->[Int]->String
@@ -115,13 +115,13 @@ main = do
     print(revCount ['a','b','c'] [1,2,3])
  ```
  
- ####Output
+ #### Output
  
  ```Scheme
  '(c c c b b a)
  ``` 
  ---
- ###2016 Aug
+ ### 2016 Aug
 Define a function tr which takes a list of lists, all of the same
 length, and returns their "transpose", meaning a list of lists of
 the first elements, the second elements, etc. (All lists in test
@@ -135,7 +135,7 @@ Examples:
  (tr '((f o x e s) (s o c k s) (r o c k s)))
  => ((f s r) (o o o) (x c c) (e k k) (s s s))
  
- ####Code
+ #### Code
 ```Scheme
 (define (tr ls) 
   (if (empty? (car ls))
@@ -150,13 +150,13 @@ Examples:
 
 (tr '((f o x e s) (s o c k s) (r o c k s)))
 ```
- ####Output
+ #### Output
  
  ```Scheme
  '((f s r) (o o o) (x c c) (e k k) (s s s))
  ``` 
  ---
- ###2017 Jan
+ ### 2017 Jan
 Define a Scheme function foo which finds all atoms inside an sexpression which pass a given predicate.
 
 Examples:
@@ -172,7 +172,7 @@ Examples:
  
  (foo number? 'a)
  => ()
- ####Code
+ #### Code
 ```Scheme
 (define (foo pred li)
   (filter pred (flatten li)))
@@ -183,14 +183,14 @@ Examples:
 (foo number? '(a (2 (c 3) 4)))
 (foo symbol? '(a (2 (c 3) 4)))
 ```
- ####Output
+ #### Output
  
  ```Scheme
  '(2 3 4)
  '(a c)
  ``` 
  ---
- ###2017 Aug
+ ### 2017 Aug
 Define a Scheme function foo that takes two lists and yields a list combining all the
 elements in the two input lists, taking 1 from the first list, 2 from the second list, 3 from
 the first list, 4 from the second list, etc, until both are exhausted.
@@ -205,7 +205,7 @@ Examples:
  
 (foo '() '(aa bb cc dd ee ff gg))
  => (aa bb cc dd ee ff gg)
- ####Code
+ #### Code
 ```Scheme
 (define (foo l1 l2)
 	(foo-calc l1 l2 0 1))
@@ -222,13 +222,13 @@ Examples:
 
 (foo '(a b c d e f g) '(aa bb cc dd ee ff gg))
 ```
- ####Output
+ #### Output
  
  ```Scheme
  '(a aa bb b c d cc dd ee ff e f g gg)
  ```
  --- 
- ###2018 Jan
+ ### 2018 Jan
 Define a Scheme function tear which takes two arguments, a
  predicate p? and a list xs, and returns a list of two lists, the
  first of which is the elements of xs that pass p?, and the second
@@ -251,14 +251,14 @@ Define a Scheme function tear which takes two arguments, a
 
 (tear (lambda (x) (> x 5)) '(1 10 2 12 3 13))
 ```
- ####Output
+ #### Output
  
  ```Scheme
  '((1 2 3) (a b c d e f))
  '((10 12 13) (1 2 3))
  ```
  --- 
- ###2018 Aug
+ ### 2018 Aug
  Define a Scheme function map-skip which takes a function and a
  list and returns the result of applying the given function to
  every other element of the given list, starting with the first
@@ -268,7 +268,7 @@ Define a Scheme function tear which takes two arguments, a
  
  (map-skip (λ (x) (+ x 1000)) '(1 2 3 4 5 6))
  => (1001 2 1003 4 1005 6)
- ####Code
+ #### Code
 ```Scheme
 (define (map-skip func li) 
   (if (null? li)
@@ -286,14 +286,14 @@ Define a Scheme function tear which takes two arguments, a
 (map-skip (λ (x) (+ x 1000)) '(1 2 3 4 5 6))
 
 ```
- ####Output
+ #### Output
  
  ```Scheme
  '(1001 2 1003 4 1005 6)
  ```
  ---
- ##Scheme Cheat Sheet
- ###>List functions that may be important
+ ## Scheme Cheat Sheet
+ ### List functions that may be important
  ```Scheme
  (length li) ; returns the length of the list li
  (append (l1) (l2)) ; returns l2 appended onto l1
